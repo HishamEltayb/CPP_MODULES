@@ -6,11 +6,11 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/08/11 22:05:30 by heltayb          ###   ########.fr        #
+#    Updated: 2024/08/11 22:08:18 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = PhoneBook
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 CXX = c++
