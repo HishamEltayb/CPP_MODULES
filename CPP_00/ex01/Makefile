@@ -6,7 +6,7 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/08/11 22:08:18 by heltayb          ###   ########.fr        #
+#    Updated: 2024/08/12 12:35:30 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 CXX = c++
 
 #delete me
-ADDITIONAL_FLAGS = -Wunused  -fsanitize=address -g3
-CXXFLAGS += $(ADDITIONAL_FLAGS)
+# ADDITIONAL_FLAGS = -Wunused  -fsanitize=address -g3
+# CXXFLAGS += $(ADDITIONAL_FLAGS)
 
 SRCDIR	=	src
 OBJDIR	=	obj

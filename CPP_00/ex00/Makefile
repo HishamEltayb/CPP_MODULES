@@ -6,7 +6,7 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/08/11 22:05:30 by heltayb          ###   ########.fr        #
+#    Updated: 2024/08/12 09:13:30 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ OBJDIR	=	obj
 SRCS	:=	$(shell find $(SRCDIR) -type f)
 OBJS	:=	$(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
 
-INCLUDE = -I ./includes/
 
 all: $(NAME)
 
@@ -33,11 +32,11 @@ run: $(NAME)
 	@./$(NAME) 
 
 $(NAME): $(OBJS)
-	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	@mkdir -p $(dir $@)
-	@$(CXX) $(INCLUDE) $(CXXFLAGS)  -c $< -o $@
+	@$(CXX) $(CXXFLAGS)  -c $< -o $@
 	
 clean: 
 	@rm -rf $(OBJDIR)
