@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:42:53 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/12 20:11:17 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/08/13 09:43:26 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <cctype>
 #include <string>
 #include <cstdlib>
+#include <sstream>
 #include "Contact.hpp"
 
 
@@ -27,11 +28,12 @@ class PhoneBook: public Contact
 		std::string	Command;
 	public:
 		void		add(int&);
-		void		print_data(void);
+		void		search(void);
 		void		SetCommand(void);
 		std::string	GetCommand(void);
 		
 		static void	PrintInstructions(void);
+		static void	WelcomMessage(void);
 };
 
 #endif

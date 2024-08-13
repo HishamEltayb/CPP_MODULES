@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:17:02 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/12 19:53:01 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/08/13 09:57:03 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,20 @@ void	Contact::SetDarkestSecret(std::string DarkestSecret)
 	this->DarkestSecret = DarkestSecret;
 }
 
-void	Contact::SetPhoneNumber(int PhoneNumber)
+void	Contact::SetPhoneNumber(std::string PhoneNumber)
 {
-	this->PhoneNumber = PhoneNumber;
+	if (PhoneNumber.length() == 10 && (std::all_of(PhoneNumber.begin(), PhoneNumber.end(), ::isdigit)))
+	{
+		this->PhoneNumber = PhoneNumber;
+	}
+	else
+	{
+		std::cout << RED BOLD "The PhoneNumber should be 10 digits\n" RESET;
+		std::cout << RED BOLD "This Contact Has Not Been Saved\n" RESET;
+		Contact::~Contact();
+		return ;
+	}
+	
 }
 
 std::string Contact::GetFirstName(void)
@@ -57,8 +68,24 @@ std::string Contact::GetDarkestSecret(void)
 	return (this->DarkestSecret);
 }
 
-int Contact::GetPhoneNumber(void)
+std::string Contact::GetPhoneNumber(void)
 {
 	return (this->PhoneNumber);
 }
 
+Contact::Contact(void)
+{
+	FirstName = "";
+	LastName = "";
+	NickName = "";
+	DarkestSecret = "";
+	PhoneNumber = "";
+}
+Contact::~Contact(void)
+{
+	FirstName = "";
+	LastName = "";
+	NickName = "";
+	DarkestSecret = "";
+	PhoneNumber = "";
+}

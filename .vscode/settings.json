@@ -1,7 +1,8 @@
 {
 	"files.associations": {
-		"iostream": "cpp",
 		"iosfwd": "cpp",
+		"iostream": "cpp",
+		"algorithm": "cpp",
 		"__bit_reference": "cpp",
 		"__config": "cpp",
 		"__debug": "cpp",
@@ -16,7 +17,6 @@
 		"__string": "cpp",
 		"__threading_support": "cpp",
 		"__tuple": "cpp",
-		"algorithm": "cpp",
 		"array": "cpp",
 		"atomic": "cpp",
 		"bit": "cpp",
