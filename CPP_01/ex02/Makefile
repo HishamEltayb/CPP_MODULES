@@ -6,11 +6,11 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/08/26 21:10:31 by heltayb          ###   ########.fr        #
+#    Updated: 2024/08/26 21:09:01 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Account
+NAME = 
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 CXX = c++
@@ -30,7 +30,7 @@ INCLUDE = -I ./includes/
 all: $(NAME)
 
 run: $(NAME)
-	@./$(NAME) > others/result.log
+	@./$(NAME) > mylog
 
 $(NAME): $(OBJS)
 	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)

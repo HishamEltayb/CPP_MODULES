@@ -6,13 +6,24 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 18:38:38 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/24 16:04:49 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/08/26 21:24:06 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void PhoneBook::add()
+void PhoneBook::StartPhonebook(void)
+{
+	PhoneBook::WelcomMessage();
+	while (1)
+	{
+		PhoneBook::PrintInstructions();
+		SetCommand();
+		ProcessCommand();
+	}	
+}
+
+void PhoneBook::add(void)
 {
 	std::string temp;
 	std::cout << BLUE BOLD "\nYOU CHOOSE TO ADD A CONTACT,\nLET US START.....\n" RESET << std::endl;
@@ -28,10 +39,12 @@ void PhoneBook::add()
 		return ;
 }
 
-void PhoneBook::search()
+void PhoneBook::search(void)
 {
 	std::string line;
+	std::string temp;
 	int index;
+	
 	
 	std::cout << CYAN "Please Enter the index of The Contact you want to Search" RESET << std::endl;
 	std::getline(std::cin, line);
@@ -41,6 +54,12 @@ void PhoneBook::search()
 		std::cout << RED BOLD "Please Enter the index from[1 - 8]" RESET << std::endl;
 	else
 	{
+		temp = this->Contact[index].GetFirstName();
+		if (temp.empty())
+		{
+			std::cout << RED BOLD<< "There is no Contact to SHOW\n" << RESET;
+			return ;
+		}
 		GetFirstName(index);
 		GetLastName(index);
 		GetNickName(index);

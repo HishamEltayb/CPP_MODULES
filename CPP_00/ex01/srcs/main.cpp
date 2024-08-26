@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:00:58 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/24 15:38:36 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/08/26 21:13:13 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@ int main(void)
 {
 	PhoneBook book;
 
-	PhoneBook::WelcomMessage();
-	while (1)
-	{
-		PhoneBook::PrintInstructions();
-		book.SetCommand();
-		book.ProcessCommand();
-	}
+	book.StartPhonebook();
 	return (0);
 }
