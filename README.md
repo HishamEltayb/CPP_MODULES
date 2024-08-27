@@ -26,15 +26,18 @@
 This project is inspired by the world-famous Wolfenstein 3D game, which was the first FPS ever. It will enable you to explore ray-casting. Your goal will be to make a dynamic view inside a maze, in which you’ll have to find your way.</p>
 **Note**:You can check the [CPP00](CPP_00/others/C++%20-%20Module%2000.pdf)
 
-<h1 align="center">
-![Pros-and-Cons-of-C](https://github.com/user-attachments/assets/870af6e3-4f37-4a55-aad5-4e247877fa71)
-
-</h1>
-
 ## Introduction
 - <p style="color: red;">The "C++ Codebase Compilation" repository is a collection of diverse C++ projects showcasing various aspects of programming, from fundamental algorithms to complex system design. Each project in this compilation highlights different problem-solving techniques, algorithmic implementations, and system integrations, making it a comprehensive resource for learning and reference.</p>
 
+<h1 align="center">
+   
+   
 
+![Pros-and-Cons-of-C](https://github.com/user-attachments/assets/870af6e3-4f37-4a55-aad5-4e247877fa71)
+
+
+
+</h1>
 ### 🔍 Importance of This Compilation:
 
 * <p style="color: red;">**Comprehensive Learning Resource:** Gain insights into different C++ programming paradigms and best practices.
