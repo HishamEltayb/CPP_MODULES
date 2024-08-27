@@ -30,7 +30,11 @@ This project is inspired by the world-famous Wolfenstein 3D game, which was the 
 - <p style="color: red;">The "C++ Codebase Compilation" repository is a collection of diverse C++ projects showcasing various aspects of programming, from fundamental algorithms to complex system design. Each project in this compilation highlights different problem-solving techniques, algorithmic implementations, and system integrations, making it a comprehensive resource for learning and reference.</p>
 
 <h1 align="center">
+
+ 
 ![Pros-and-Cons-of-C](https://github.com/user-attachments/assets/870af6e3-4f37-4a55-aad5-4e247877fa71)
+
+
 </h1>
 
 
