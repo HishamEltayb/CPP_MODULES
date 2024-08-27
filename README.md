@@ -9,6 +9,7 @@
    
    
 
+![free-c-plus-plus-projects-for-beginners](https://github.com/user-attachments/assets/b75fbaa5-8797-45c8-a52a-4a90d47ad8d3)
 
 
 
@@ -16,7 +17,6 @@
 
 <p align="center">
   <a href="#-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="LICENSE">License</a>
@@ -24,7 +24,7 @@
 
 ## 👨🏻‍💻 About the project
 This project is inspired by the world-famous Wolfenstein 3D game, which was the first FPS ever. It will enable you to explore ray-casting. Your goal will be to make a dynamic view inside a maze, in which you’ll have to find your way.</p>
-**Note**:You can check the [Cub3d.pdf](others/Cub3d.pdf)
+**Note**:You can check the [CPP.pdf](CPP00/others/"C++ - Module 00.pdf")
 
 <h1 align="center">
    
