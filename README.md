@@ -27,7 +27,7 @@ This project is inspired by the world-famous Wolfenstein 3D game, which was the 
 **Note**:You can check the [CPP00](CPP_00/others/C++%20-%20Module%2000.pdf)
 
 <h1 align="center">
-![Features-of-C-1536x748](https://github.com/user-attachments/assets/2246251c-7b81-4847-a7f0-6cf3fd20fef0)
+![Features-of-C-1536x748](https://github.com/user-attachments/assets/f8353f5c-50fa-4f7c-a8db-16ae86348bf3)
 
 </h1>
 
