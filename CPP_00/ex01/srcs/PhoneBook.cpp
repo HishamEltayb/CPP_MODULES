@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 18:38:38 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/26 21:24:06 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/08/27 11:08:11 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void PhoneBook::StartPhonebook(void)
 {
+	this->status = 1;
 	PhoneBook::WelcomMessage();
-	while (1)
+	while (this->status)
 	{
 		PhoneBook::PrintInstructions();
 		SetCommand();
@@ -45,7 +46,7 @@ void PhoneBook::search(void)
 	std::string temp;
 	int index;
 	
-	
+	GetTable();
 	std::cout << CYAN "Please Enter the index of The Contact you want to Search" RESET << std::endl;
 	std::getline(std::cin, line);
 	std::istringstream(line) >> index;

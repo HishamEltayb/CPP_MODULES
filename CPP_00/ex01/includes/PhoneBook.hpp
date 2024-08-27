@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:42:53 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/26 21:17:39 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/08/27 11:17:23 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class PhoneBook
 {
 	private:
 		int			index;
+		bool		status;
 		std::string	Command;
 		Contact 	Contact[8];
 
@@ -60,6 +61,8 @@ class PhoneBook
 		PhoneBook();
 		~PhoneBook();
 		void		StartPhonebook();
+
+
 	
 };
 

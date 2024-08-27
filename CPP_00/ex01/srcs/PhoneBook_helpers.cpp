@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 18:38:38 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/26 21:16:51 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/08/27 11:09:19 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ void	PhoneBook::SetCommand(void)
 void	PhoneBook::ProcessCommand(void)
 {
 	if (GetCommand() == "exit")
-		(std::cout << MAGENTA BOLD"SAD TO SEE YOU LEAVE 😢" RESET << std::endl, this->~PhoneBook(), exit(0));
+	{
+		std::cout << MAGENTA BOLD"SAD TO SEE YOU LEAVE 😢" RESET << std::endl;
+		this->status = 0;
+		return ;
+	}
 	else if (GetCommand() == "add")
 	{
 		if (this->index == 8)
@@ -34,7 +38,7 @@ void	PhoneBook::ProcessCommand(void)
 		add();
 	}
 	else if (GetCommand() == "search")
-		GetTable(), search();
+		search();
 	else
 		std::cout << RED BOLD "\nPlease Type One of The Commands ADD, SEARCH or EXIT !!" RESET << std::endl;
 }
