@@ -6,13 +6,13 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/01 13:24:34 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/01 14:16:59 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Zombie
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 
 CXX = c++
 
 #delete me
