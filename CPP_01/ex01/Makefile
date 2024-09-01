@@ -6,18 +6,18 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/08/26 21:08:51 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/01 13:24:34 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = Zombie
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 CXX = c++
 
 #delete me
-ADDITIONAL_FLAGS = -Wunused  -fsanitize=address -g3
-CXXFLAGS += $(ADDITIONAL_FLAGS)
+# ADDITIONAL_FLAGS = -Wunused  -fsanitize=address -g3
+# CXXFLAGS += $(ADDITIONAL_FLAGS)
 
 SRCDIR	=	srcs
 OBJDIR	=	objs
@@ -32,7 +32,7 @@ all: $(NAME)
 run: $(NAME)
 	@./$(NAME) 
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) ./includes/Zombie.hpp
 	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
@@ -46,6 +46,8 @@ fclean:
 	@make clean
 	@rm -rf $(NAME)
 
+valgrind: $(NAME) 
+	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
 re:
 	@make fclean
 	@make all

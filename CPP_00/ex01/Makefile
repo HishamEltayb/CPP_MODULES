@@ -6,13 +6,13 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/08/24 17:19:22 by heltayb          ###   ########.fr        #
+#    Updated: 2024/08/31 19:47:52 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 CXX = c++
 
 #delete me
@@ -32,7 +32,7 @@ all: $(NAME)
 run: $(NAME)
 	@./$(NAME) 
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) ./includes/Contact.hpp ./includes/PhoneBook.hpp
 	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp

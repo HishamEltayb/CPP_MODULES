@@ -6,7 +6,7 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/08/26 21:10:31 by heltayb          ###   ########.fr        #
+#    Updated: 2024/08/31 19:48:29 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ all: $(NAME)
 run: $(NAME)
 	@./$(NAME) > others/result.log
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) ./includes/Account.hpp
 	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
