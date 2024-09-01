@@ -9,6 +9,7 @@
    
    
 
+![free-c-plus-plus-projects-for-beginners](https://github.com/user-attachments/assets/b75fbaa5-8797-45c8-a52a-4a90d47ad8d3)
 
 
 
@@ -16,7 +17,6 @@
 
 <p align="center">
   <a href="#-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="LICENSE">License</a>
@@ -24,23 +24,18 @@
 
 ## 👨🏻‍💻 About the project
 This project is inspired by the world-famous Wolfenstein 3D game, which was the first FPS ever. It will enable you to explore ray-casting. Your goal will be to make a dynamic view inside a maze, in which you’ll have to find your way.</p>
-**Note**:You can check the [Cub3d.pdf](others/Cub3d.pdf)
-
-<h1 align="center">
-   
-
-
-
-
-
-
-
-
-
-</h1>
+**Note**:You can check the [CPP00](CPP_00/others/C++%20-%20Module%2000.pdf)
 
 ## Introduction
 - <p style="color: red;">The "C++ Codebase Compilation" repository is a collection of diverse C++ projects showcasing various aspects of programming, from fundamental algorithms to complex system design. Each project in this compilation highlights different problem-solving techniques, algorithmic implementations, and system integrations, making it a comprehensive resource for learning and reference.</p>
+
+<h1 align="center">
+
+ 
+![Pros-and-Cons-of-C](https://github.com/user-attachments/assets/870af6e3-4f37-4a55-aad5-4e247877fa71)
+
+
+</h1>
 
 
 ### 🔍 Importance of This Compilation:
@@ -72,13 +67,8 @@ Each project follows a structured approach to ensure clarity and functionality:
      Ensuring the code meets quality standards through rigorous testing.
 
 <h1 align="center">
-   
 
-
-
-
-
-
+![Top-8-Project-Ideas-in-CFor-Beginners](https://github.com/user-attachments/assets/60de5902-b3a3-4be9-95ce-6d14d72d18a6)
 
 </h1>
 
@@ -87,6 +77,7 @@ Each project follows a structured approach to ensure clarity and functionality:
 
 <h1 align="center">
    
+![image-asset](https://github.com/user-attachments/assets/17cb684b-bd48-4052-bd4f-fb87bf92f69b)
 
    
 </h1>
