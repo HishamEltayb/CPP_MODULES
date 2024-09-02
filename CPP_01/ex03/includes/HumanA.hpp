@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:29 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/01 15:53:46 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/01 19:51:21 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 #include "Weapon.hpp"
 
 
-// class HumanA
-// {
-// 	private:
-// 		std::string name;
-// 		Weapon		weapon;
-// 	public:
-// 		HumanA(void);
-// 		~HumanA(void);
+class HumanA
+{
+	private:
+		std::string name;
+		Weapon		weapon;
+	public:
+		HumanA(std::string name, std::string weapon);
+		~HumanA(void);
 		
-// 		void	attack(void);
-// };
+		void	attack(void);
+};
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/31 20:14:56 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/01 13:49:39 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	randomChump( std::string name );
 
 int main(void)
 {
-	Zombie *heap;
+	Zombie *heap = NULL;
 	
 	randomChump("STACK");
 	std::cout << WHITE BOLD;
@@ -25,6 +25,8 @@ int main(void)
 	std::cout << RESET;
 	
 	heap = newZombie("HEAP");
+	if (!heap)
+		return (1);
 	std::cout << WHITE BOLD;
 	std::cout << "5. THIS IS THE FIRST POINT AFTER EXITING THE newZombie FUNCTION, AND THE HEAP ZOMBIE HAS NOT BEEN DESTROYED YET.\n";
 	std::cout << RESET;

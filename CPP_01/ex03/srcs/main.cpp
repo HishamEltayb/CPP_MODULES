@@ -6,17 +6,26 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/01 15:58:31 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/02 10:59:51 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main(void)
 {
-	Weapon some_weapon;
-	some_weapon.setType("GUN");
-	std::string& type = some_weapon.getType();
+	Weapon weapon;
 
-	std::cout << type << std::endl;
+	weapon.setType("AKM");
+	std::cout << weapon.getType() << std::endl;
+	HumanA human_A("HUMAN A", "GUN");
+	HumanB human_B("HUMAN B");
+	human_B.attack();
+	std::cout << "\n\n\n";
+	human_B.setWeapon("Knife");
+	human_B.attack();
+	human_A.attack();
+	return (0);
 }

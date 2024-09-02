@@ -6,11 +6,11 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/08/31 19:48:57 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/01 15:09:59 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = AddressManipulation
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 CXX = c++
@@ -25,19 +25,18 @@ OBJDIR	=	objs
 SRCS	:=	$(shell find $(SRCDIR) -type f)
 OBJS	:=	$(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
 
-INCLUDE = -I ./includes/
 
 all: $(NAME)
 
 run: $(NAME)
-	@./$(NAME) > mylog
+	@./$(NAME)
 
-$(NAME): $(OBJS) ./includes/
-	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	@mkdir -p $(dir $@)
-	@$(CXX) $(INCLUDE) $(CXXFLAGS)  -c $< -o $@
+	@$(CXX) $(CXXFLAGS)  -c $< -o $@
 	
 clean: 
 	@rm -rf $(OBJDIR)

@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:29 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/01 15:44:49 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/02 10:33:13 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ class Weapon
 		const	std::string& getType( void );
 		void	setType(std::string type);
 };
+
 
 #endif
