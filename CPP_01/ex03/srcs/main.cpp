@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/02 10:59:51 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/02 11:15:06 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int main(void)
 	HumanA human_A("HUMAN A", "GUN");
 	HumanB human_B("HUMAN B");
 	human_B.attack();
-	std::cout << "\n\n\n";
 	human_B.setWeapon("Knife");
 	human_B.attack();
 	human_A.attack();

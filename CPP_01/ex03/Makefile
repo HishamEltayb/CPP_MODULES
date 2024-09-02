@@ -6,11 +6,11 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/01 19:19:31 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/02 11:14:51 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = HumansWeapons
+NAME = HumansWar
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 
 CXX = c++
@@ -25,20 +25,20 @@ OBJDIR	=	objs
 SRCS	:=	$(shell find $(SRCDIR) -type f)
 OBJS	:=	$(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
 
-INCLUDE = ./includes/
-HEADERS := $(shell find $(INCLUDE) -type f)
+INCLUDE = -I ./includes/
 
 all: $(NAME)
 
 run: $(NAME)
 	@./$(NAME) 
 
-$(NAME): $(OBJS) $(HEADERS)
-	@$(CXX) $(CXXFLAGS) -I $(INCLUDE) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS)
+	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	@mkdir -p $(dir $@)
-	@$(CXX) -I $(INCLUDE) $(CXXFLAGS)  -c $< -o $@
+	@$(CXX) $(INCLUDE) $(CXXFLAGS)  -c $< -o $@
+
 clean: 
 	@rm -rf $(OBJDIR)
 
