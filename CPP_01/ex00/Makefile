@@ -6,17 +6,17 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/01 13:24:38 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/04 18:03:01 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Zombie
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra 
 CXX = c++
 
 #delete me
-# ADDITIONAL_FLAGS = -Wunused  -fsanitize=address -g3
+# ADDITIONAL_FLAGS = -Wunused  -fsanitize=address -g3 -std=c++98
 # CXXFLAGS += $(ADDITIONAL_FLAGS)
 
 

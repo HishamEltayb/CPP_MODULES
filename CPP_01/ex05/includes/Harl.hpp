@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 13:14:29 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/02 17:34:17 by heltayb          ###   ########.fr       */
+/*   Created: 2024/09/02 13:37:53 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/04 15:58:27 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
 #include <iostream>
 #include <string>
-#include <new>
 
 #define RED "\033[0;31m"
 #define WHITE "\033[0;37m"
@@ -28,17 +27,25 @@
 #define UNDERLINE "\033[4m"
 #define RESET "\033[0m"
 
-class Zombie
+
+
+class Harl 
 {
 	private:
-		std::string name;
-	public:
-		Zombie(std::string name);
-		Zombie(void);
-		~Zombie(void);
+		std::string 	levels[6];
+		void			(Harl::*comments[6])(void);
+
+		void			debug(void);
+		void			info(void);
+		void			warning(void);
+		void			error(void);
+		void			finish(void);
 		
-		void announce( void );
-		void setName(std::string name);
+	public:
+		Harl(void);
+		~Harl(void);
+		
+		void			complain(std::string level);
 };
 
 #endif

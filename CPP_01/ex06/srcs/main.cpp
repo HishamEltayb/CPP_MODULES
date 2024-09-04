@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact_Getters.cpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 11:17:02 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/02 17:25:51 by heltayb          ###   ########.fr       */
+/*   Created: 2024/09/04 14:01:13 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/04 17:55:17 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "Harl.hpp"
 
-std::string Contact::GetFirstName(void)
-{
-	return (this->FirstName);
-}
 
-std::string Contact::GetLastName(void)
+int main(int ac, char **av)
 {
-	return (this->LastName);
-}
-
-std::string Contact::GetNickName(void)
-{
-	return (this->NickName);
-}
-
-std::string Contact::GetDarkestSecret(void)
-{
-	return (this->DarkestSecret);
-}
-
-std::string Contact::GetPhoneNumber(void)
-{
-	return (this->PhoneNumber);
+	Harl		harl;
+	std::string	arg;
+	
+	if (ac == 2)
+	{
+		arg = av[1];
+		harl.complain(arg);
+	}
+	else
+	{
+		std::cout << RED <<  "Wrong Number of arguments\n" << RESET;
+	}
+	return (0);
 }

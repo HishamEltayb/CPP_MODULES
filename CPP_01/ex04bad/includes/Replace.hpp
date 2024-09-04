@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 13:14:29 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/02 17:34:17 by heltayb          ###   ########.fr       */
+/*   Created: 2024/09/02 13:37:53 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/02 13:52:13 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef REPLACE_HPP
+# define REPLACE_HPP
 
 #include <iostream>
 #include <string>
-#include <new>
+#include <fstream>
+
 
 #define RED "\033[0;31m"
 #define WHITE "\033[0;37m"
@@ -28,17 +29,6 @@
 #define UNDERLINE "\033[4m"
 #define RESET "\033[0m"
 
-class Zombie
-{
-	private:
-		std::string name;
-	public:
-		Zombie(std::string name);
-		Zombie(void);
-		~Zombie(void);
-		
-		void announce( void );
-		void setName(std::string name);
-};
+
 
 #endif

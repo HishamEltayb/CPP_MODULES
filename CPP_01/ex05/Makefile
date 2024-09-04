@@ -6,17 +6,17 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/04 10:48:20 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/04 18:32:32 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = Harl
 
-CXXFLAGS = -Wall -Werror -Wextra 
+CXXFLAGS = -Wall -Werror -Wextra
 CXX = c++
 
 #delete me
-# ADDITIONAL_FLAGS = -Wunused  -fsanitize=address -g3 -std=c++98 
+# ADDITIONAL_FLAGS = -Wunused  -fsanitize=address -g3 -std=c++98
 # CXXFLAGS += $(ADDITIONAL_FLAGS)
 
 SRCDIR	=	srcs
@@ -30,26 +30,26 @@ INCLUDE = -I ./includes/
 all: $(NAME)
 
 run: $(NAME)
-	@./$(NAME) 
+	@-./$(NAME)
 
-$(NAME): $(OBJS) ./includes/Zombie.hpp
-	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS)
+	@-$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
-	@mkdir -p $(dir $@)
-	@$(CXX) $(INCLUDE) $(CXXFLAGS)  -c $< -o $@
-	
+	@-mkdir -p $(dir $@)
+	@-$(CXX) $(INCLUDE) $(CXXFLAGS)  -c $< -o $@
+
 clean: 
-	@rm -rf $(OBJDIR)
+	@-rm -rf $(OBJDIR)
 
 fclean:
-	@make clean
-	@rm -rf $(NAME)
+	@-make clean
+	@-rm -rf $(NAME)
 
 valgrind: $(NAME) 
-	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+	@-valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
 re:
-	@make fclean
-	@make all
+	@-make fclean
+	@-make all
 
 .PHONY: all re clean fclean

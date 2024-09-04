@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:11 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/02 11:13:38 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:29:55 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,29 @@
 
 void	HumanB::attack(void)
 {
-	if (this->weapon.getType().empty())
-	{
-		std::cout << RED;
-		std::cout << "HumanB does not have a weapon\n";
-		std::cout << RESET;
-	}
+	if (this->weapon == NULL || this->weapon->getType().empty())
+		std::cout << RED << "HumanB does not have a weapon\n" << RESET;
 	else
 	{
 		std::cout << BLUE + this->name + RESET;
 		std::cout << " attacks with their ";
-		std::cout << RED + this->weapon.getType() + RESET << std::endl;
+		std::cout << RED + this->weapon->getType() + RESET << std::endl;
 	}
 }
 
-void	HumanB::setWeapon(std::string weapon)
+void	HumanB::setWeapon(Weapon &weapon)
 {
-	this->weapon.setType(weapon);
+	this->weapon = &weapon;
 }
 
 HumanB::HumanB(std::string name)
 {
 	this->name = name ;
-
-	std::cout << GREEN;
-	std::cout << "HumanB Constructor Called\n";
-	std::cout << RESET;	
+	this->weapon = NULL;
+	std::cout << GREEN << "HumanB Constructor Called\n" << RESET;
 }
 
 HumanB::~HumanB(void)
 {
-	std::cout << GREEN;
-	std::cout << "HumanB Destructor Called\n";
-	std::cout << RESET;	
+	std::cout << GREEN << "HumanB Destructor Called\n" << RESET;
 }

@@ -6,13 +6,12 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 13:42:43 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/01 15:09:15 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/04 18:08:23 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string.h>
-#include <new>
+#include <string>
 
 #define RED "\033[0;31m"
 #define WHITE "\033[0;37m"
@@ -38,7 +37,6 @@ int main(void)
 	std::cout << GREEN + string + RESET << std::endl;
 	//the value of string
 	
-	
 	//the value of address of string
 	std::cout << BLUE BOLD;
 	std::cout << "&";
@@ -49,8 +47,10 @@ int main(void)
 	std::cout << RESET;
 	//the value of address of string
 
+
 	std::cout << std::endl;
 	std::cout << std::endl;
+	
 	
 	//the value of stringPTR
 	std::cout << BLUE BOLD;
@@ -60,7 +60,6 @@ int main(void)
 	std::cout << GREEN + *stringPTR + RESET << std::endl;
 	//the value of stringPTR
 	
-	
 	//the value of address of stringPTR
 	std::cout << "stringPTR(address)	--> ";
 	std::cout << GREEN;
@@ -68,14 +67,15 @@ int main(void)
 	std::cout << RESET;
 	//the value of address of stringPTR
 
+
 	std::cout << std::endl;
 	std::cout << std::endl;
+
 
 	//the value of stringREF
 	std::cout << "stringREF(value)	--> ";
 	std::cout << GREEN + stringREF + RESET << std::endl;
 	//the value of stringREF
-	
 	
 	//the value of address of stringREF
 	std::cout << BLUE BOLD;
@@ -86,8 +86,5 @@ int main(void)
 	std::cout << &stringREF << std::endl;
 	std::cout << RESET;
 	//the value of address of stringREF
-
-	
-	
 	return (0);
 }

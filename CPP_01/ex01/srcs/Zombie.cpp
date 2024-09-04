@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:04:20 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/01 14:16:11 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:33:54 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void Zombie::announce( void )
 {
-	std::cout << YELLOW BOLD ;
+	std::cout << YELLOW BOLD;
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 	std::cout << RESET;
 }

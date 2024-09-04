@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:29 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/02 10:33:13 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:03:29 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ class Weapon
 	private:
 		std::string type;
 	public:
-		Weapon(void);
+		Weapon(std::string type);
 		~Weapon(void);
+		Weapon(void);
 		
 		const	std::string& getType( void );
 		void	setType(std::string type);
