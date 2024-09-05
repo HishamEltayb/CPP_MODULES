@@ -47,7 +47,7 @@ void	Harl::complain(std::string level)
 	{
 		case 1:
 			(this->*comments[1])();
-		// intentional fall-through
+		// fall-through
 		case 2:
 			(this->*comments[2])();
 		// intentional fall-through

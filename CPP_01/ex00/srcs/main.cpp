@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/01 13:49:39 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/05 11:52:41 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void)
 	std::cout << WHITE BOLD;
 	std::cout << "3. THE FIRST POINT AFTER EXITITNG THE randomChump FUNCTION IS HERE, SO THE DESTRUCTOR HAS BEEN CALLED\n";
 	std::cout << RESET;
-	
+
 	heap = newZombie("HEAP");
 	if (!heap)
 		return (1);

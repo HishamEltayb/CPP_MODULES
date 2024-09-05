@@ -6,13 +6,13 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/04 18:32:55 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/05 12:26:31 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = weapon
 
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -g3
 CXX = c++
 
 #delete me

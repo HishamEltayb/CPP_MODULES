@@ -6,17 +6,17 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/04 18:11:25 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/05 12:29:23 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <stdio.h>
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
 int main(void)
 {
-
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanA bob("Bob", club);
