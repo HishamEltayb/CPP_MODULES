@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:13:53 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/11 14:37:32 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/11 23:00:55 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Fixed::Fixed(const int intNumber)
 	}
 	else
 		this->fixedPointNumber = intNumber << this->fractionalBits;
-	std::cout << GREEN BOLD << "[Int constructor called]\n" <<  RESET;
+	// std::cout << GREEN BOLD << "[Int constructor called]\n" <<  RESET;
 }
 
 //we want to shift left by 8 to make a space for the point because the float is fo ex (00000010 . 0001000) ==> (00000010 00001000 . 00000000) 2.8 ==> 520
@@ -70,12 +70,12 @@ Fixed::Fixed(const float floatNumber)
 	}
 	else 
 		this->fixedPointNumber = roundf(floatNumber * (1 << this->fractionalBits));
-	std::cout << GREEN BOLD << "[Float constructor called]\n" <<  RESET;
+	// std::cout << GREEN BOLD << "[Float constructor called]\n" <<  RESET;
 }
 
 Fixed::Fixed(const Fixed &existObject)
 {
-	std::cout << YELLOW BOLD << "[Copy constructor called]\n" << RESET;
+	// std::cout << YELLOW BOLD << "[Copy constructor called]\n" << RESET;
 	*this = existObject;
 }
 

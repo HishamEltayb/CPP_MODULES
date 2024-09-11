@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:13:53 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/11 14:02:34 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/11 22:55:07 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 
 const int Fixed::fractionalBits = 8;
 
-Fixed::~Fixed(void) 
-{std::cout << RED BOLD << "[Destructor called]\n" << RESET;}
+Fixed::~Fixed(void) {std::cout << RED BOLD << "[Destructor called]\n" << RESET;}
 
 Fixed::Fixed(void)
 {

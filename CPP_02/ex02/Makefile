@@ -6,13 +6,13 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/11 22:26:53 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/11 23:00:20 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Fixed
 
-CXXFLAGS = -Wall -Werror -Wextra  -g3 -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -g3 -std=c++98
 CXX = c++
 
 #comment me

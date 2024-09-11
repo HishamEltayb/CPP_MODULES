@@ -6,18 +6,16 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/10 16:12:13 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/11 22:55:56 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-
-
 int main(void) 
 {
 	Fixed a;
-	Fixed const b( -8388609 );
+	Fixed const b( 10 );
 	Fixed const c( 42.42f );
 	Fixed const d( b );
 	
@@ -31,5 +29,6 @@ int main(void)
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	
     return 0;
 }

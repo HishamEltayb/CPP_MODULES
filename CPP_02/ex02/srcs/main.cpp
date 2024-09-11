@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/11 14:47:37 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/11 22:59:51 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,21 @@
 
 int main( void ) 
 {
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	
+	return 0;
+}
+
+
+
 	// Fixed a;
 	// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 	// std::cout << a << std::endl;
@@ -85,4 +100,3 @@ int main( void )
 	// std::cout << "mult" << a * b << "\n";//0.25
 	// std::cout << "mult" << c * b << "\n"; //2.5
 	// std::cout << "div" << c / d << "\n"; //2.5
-}
