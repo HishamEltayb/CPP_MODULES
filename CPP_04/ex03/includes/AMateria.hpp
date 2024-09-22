@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 19:10:58 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/19 08:26:18 by heltayb          ###   ########.fr       */
+/*   Created: 2024/08/27 13:14:29 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/22 13:00:04 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#include "main.hpp"
 
-#include <iostream>
-#include "ClapTrap.hpp"
+class ICharacter;
 
-class FragTrap : virtual public ClapTrap
+class AMateria
 {
 	protected:
-		unsigned int		hitPoints;
-		unsigned int		attackDamage;
+		std::string type;
+		
 	public:
-		FragTrap(std::string name);
-		FragTrap(void);
-		~FragTrap(void);
-		FragTrap(const FragTrap& fragtrap);
+		virtual ~AMateria(void);
+		AMateria(void);
+ 		AMateria(const AMateria &existObject);
+		AMateria &operator=(const AMateria &existObject);
+ 		AMateria(std::string const &type);
 
-		FragTrap&	operator=(const FragTrap& existObject);
-		void 		highFivesGuys();
+		std::string const & getType() const;
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
-
+	
 #endif

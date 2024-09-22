@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 19:10:58 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/19 08:26:18 by heltayb          ###   ########.fr       */
+/*   Created: 2024/08/27 13:14:29 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/14 20:05:42 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#include "main.hpp"
 
-#include <iostream>
-#include "ClapTrap.hpp"
-
-class FragTrap : virtual public ClapTrap
+class IMateriaSource
 {
-	protected:
-		unsigned int		hitPoints;
-		unsigned int		attackDamage;
 	public:
-		FragTrap(std::string name);
-		FragTrap(void);
-		~FragTrap(void);
-		FragTrap(const FragTrap& fragtrap);
-
-		FragTrap&	operator=(const FragTrap& existObject);
-		void 		highFivesGuys();
+		virtual ~IMateriaSource();
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif

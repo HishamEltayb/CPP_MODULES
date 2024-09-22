@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/19 18:00:36 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/22 14:52:52 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 int main(void)
 {
+	const Animal* d = new Dog();
+	const Animal* c = new Cat();
+	delete d;
+	delete c;
+	
 	int numberOfObjects = 9;
 	
 	Animal *Animal[numberOfObjects];
@@ -64,6 +69,10 @@ int main(void)
 	for (; i < numberOfObjects; i++)
 		delete Animal[i];
 		
+
+
+
+
 
 
 		

@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   cat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 19:10:58 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/19 08:26:18 by heltayb          ###   ########.fr       */
+/*   Created: 2024/08/27 13:14:29 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/14 20:05:42 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include <string>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class FragTrap : virtual public ClapTrap
+class Cat : public Animal
 {
-	protected:
-		unsigned int		hitPoints;
-		unsigned int		attackDamage;
+	private:
+		Brain *brain;
 	public:
-		FragTrap(std::string name);
-		FragTrap(void);
-		~FragTrap(void);
-		FragTrap(const FragTrap& fragtrap);
+		~Cat(void);
+		Cat(void);
+		Cat(const Cat &existObject);
+		Cat &operator=(const Cat &existObject);
 
-		FragTrap&	operator=(const FragTrap& existObject);
-		void 		highFivesGuys();
+		void			makeSound(void) const;
+		void			printBrainIdeas(void) const;
+		void			setBrainIdeas(std::string idea) const;
+		std::string		getType(void) const;
+
 };
 
+	
 #endif

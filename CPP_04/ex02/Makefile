@@ -6,18 +6,21 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/13 14:55:39 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/22 14:50:06 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = Abstract
 
 CXXFLAGS = -Wall -Werror -Wextra 
 CXX = c++
 
 #comment me
-ADDITIONAL_FLAGS = -Wunused  -fsanitize=address -g3 -std=c++98
-CXXFLAGS += $(ADDITIONAL_FLAGS)
+# ADDITIONAL_FLAGS = -Wunused -g3 -std=c++98
+# CXXFLAGS += $(ADDITIONAL_FLAGS)
+#comment me
+# SANITAIZE_FLAG = -fsanitize=address
+# CXXFLAGS += $(SANITAIZE_FLAG)
 
 
 SRCDIR	=	srcs

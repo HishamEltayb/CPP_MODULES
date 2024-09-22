@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   IMateriaSource.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 19:10:58 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/19 08:26:18 by heltayb          ###   ########.fr       */
+/*   Created: 2024/08/27 13:13:53 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/17 17:21:36 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "main.hpp"
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
-
-#include <iostream>
-#include "ClapTrap.hpp"
-
-class FragTrap : virtual public ClapTrap
+IMateriaSource::~IMateriaSource(void)  
 {
-	protected:
-		unsigned int		hitPoints;
-		unsigned int		attackDamage;
-	public:
-		FragTrap(std::string name);
-		FragTrap(void);
-		~FragTrap(void);
-		FragTrap(const FragTrap& fragtrap);
-
-		FragTrap&	operator=(const FragTrap& existObject);
-		void 		highFivesGuys();
-};
-
-#endif
+	std::cout << ITALIC LIGHT_WHITE STRIKETHROUGH << "[IMateriaSource Destructor called]\n" << RESET;
+}

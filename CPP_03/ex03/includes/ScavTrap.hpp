@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:41:16 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/14 22:32:08 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/19 08:24:51 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class ScavTrap : virtual public ClapTrap
 {
 	protected:
-		unsigned int energyPoints;
+		unsigned int		energyPoints;
 	public:
 		ScavTrap(void);
 		~ScavTrap(void);

@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 19:10:58 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/19 08:26:18 by heltayb          ###   ########.fr       */
+/*   Created: 2024/08/27 13:14:29 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/14 20:05:42 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include <string>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class FragTrap : virtual public ClapTrap
+class Dog : public Animal
 {
-	protected:
-		unsigned int		hitPoints;
-		unsigned int		attackDamage;
-	public:
-		FragTrap(std::string name);
-		FragTrap(void);
-		~FragTrap(void);
-		FragTrap(const FragTrap& fragtrap);
+	private:
+		Brain *brain;
 
-		FragTrap&	operator=(const FragTrap& existObject);
-		void 		highFivesGuys();
+	public:
+		~Dog(void);
+		Dog(void);
+		Dog(const Dog &existObject);
+		Dog &operator=(const Dog &existObject);
+		
+		void			makeSound(void) const;
+		void			printBrainIdeas(void) const;
+		void			setBrainIdeas(std::string idea) const;
+		std::string		getType(void) const;
+
 };
+
 
 #endif

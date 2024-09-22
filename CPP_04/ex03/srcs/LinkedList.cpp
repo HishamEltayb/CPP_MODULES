@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   LinkedList.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 19:10:58 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/19 08:26:18 by heltayb          ###   ########.fr       */
+/*   Created: 2024/08/27 13:13:53 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/22 12:58:56 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "main.hpp"
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+LinkedList::LinkedList() {this->head = NULL;}
 
-#include <iostream>
-#include "ClapTrap.hpp"
+LinkedList::~LinkedList(){}
 
-class FragTrap : virtual public ClapTrap
+void LinkedList::listAddBack(void *newData)
 {
-	protected:
-		unsigned int		hitPoints;
-		unsigned int		attackDamage;
-	public:
-		FragTrap(std::string name);
-		FragTrap(void);
-		~FragTrap(void);
-		FragTrap(const FragTrap& fragtrap);
+    Node* newNode = new Node(newData);
 
-		FragTrap&	operator=(const FragTrap& existObject);
-		void 		highFivesGuys();
-};
-
-#endif
+    if (!this->head)
+        this->head = newNode;
+    else
+    {
+        Node *temp = this->head;
+	    while (this->head->next)
+			this->head = this->head->next;
+        this->head->next = newNode;
+		this->head = temp;
+    }
+}

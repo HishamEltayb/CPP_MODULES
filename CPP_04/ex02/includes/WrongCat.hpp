@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   cat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 19:10:58 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/19 08:26:18 by heltayb          ###   ########.fr       */
+/*   Created: 2024/08/27 13:14:29 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/14 20:05:42 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include <string>
+#include "WrongAnimal.hpp"
 
-class FragTrap : virtual public ClapTrap
+class WrongCat : public WrongAnimal
 {
-	protected:
-		unsigned int		hitPoints;
-		unsigned int		attackDamage;
 	public:
-		FragTrap(std::string name);
-		FragTrap(void);
-		~FragTrap(void);
-		FragTrap(const FragTrap& fragtrap);
+		~WrongCat(void);
+		WrongCat(void);
+		WrongCat(const WrongCat &existObject);
+		WrongCat &operator=(const WrongCat &existObject);
 
-		FragTrap&	operator=(const FragTrap& existObject);
-		void 		highFivesGuys();
+		void	makeSound(void) const;
 };
 
+	
 #endif

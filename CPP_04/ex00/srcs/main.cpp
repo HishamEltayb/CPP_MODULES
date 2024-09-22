@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/19 10:33:55 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/22 14:35:44 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
-
-
 
 int main(void)
 {
@@ -46,5 +44,6 @@ int main(void)
 	wrongcat->makeSound();
 	delete wrongcat;
 	std::cout << std::endl;
+	
 	return (0);
 }

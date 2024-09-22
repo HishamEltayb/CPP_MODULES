@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Node.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 19:10:58 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/19 08:26:18 by heltayb          ###   ########.fr       */
+/*   Created: 2024/08/27 13:13:53 by heltayb           #+#    #+#             */
+/*   Updated: 2024/09/22 11:24:54 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "main.hpp"
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+Node::~Node(){}
 
-#include <iostream>
-#include "ClapTrap.hpp"
-
-class FragTrap : virtual public ClapTrap
+Node::Node(void* newData)
 {
-	protected:
-		unsigned int		hitPoints;
-		unsigned int		attackDamage;
-	public:
-		FragTrap(std::string name);
-		FragTrap(void);
-		~FragTrap(void);
-		FragTrap(const FragTrap& fragtrap);
-
-		FragTrap&	operator=(const FragTrap& existObject);
-		void 		highFivesGuys();
-};
-
-#endif
+	this->data = newData;
+	this->next = NULL;
+}
