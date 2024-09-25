@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 18:38:38 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/27 11:09:19 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/25 15:56:46 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,19 @@ void	PhoneBook::GetTable(void)
 	for (int i = 0; i < 8; i++)
 	{
 		std::cout << std::setw(10) << i + 1 << "|";
-		temp = this->Contact[i].GetFirstName();
+		temp = this->contact[i].GetFirstName();
 		if (temp.length() > 10)
 			temp.resize(9), temp += ".";
 		else
 			temp.resize(10, ' ');
 		std::cout << std::setw(10) << temp << "|";
-		temp = this->Contact[i].GetLastName();
+		temp = this->contact[i].GetLastName();
 		if (temp.length() > 10)
 			temp.resize(9), temp += ".";
 		else
 			temp.resize(10, ' ');
 		std::cout << std::setw(10) << temp << "|";
-		temp = this->Contact[i].GetNickName();
+		temp = this->contact[i].GetNickName();
 		if (temp.length() > 10)
 			temp.resize(9), temp += ".";
 		else

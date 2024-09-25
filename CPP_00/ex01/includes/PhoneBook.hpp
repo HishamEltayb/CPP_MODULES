@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:42:53 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/02 17:26:57 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/25 15:55:19 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class PhoneBook
 		int			index;
 		bool		status;
 		std::string	Command;
-		Contact 	Contact[8];
+		Contact 	contact[8];
 
 		//member functions		
 		void		add();

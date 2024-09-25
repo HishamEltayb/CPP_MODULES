@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 18:38:38 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/27 11:08:11 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/25 15:56:46 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void PhoneBook::StartPhonebook(void)
 void PhoneBook::add(void)
 {
 	std::string temp;
-	std::cout << BLUE BOLD "\nYOU CHOOSE TO ADD A CONTACT,\nLET US START.....\n" RESET << std::endl;
+	std::cout << BLUE BOLD "\nYOU CHOOSE TO ADD A contact,\nLET US START.....\n" RESET << std::endl;
 	if (!SetFirstName())
 		return ;
 	if (!SetLastName())
@@ -47,7 +47,7 @@ void PhoneBook::search(void)
 	int index;
 	
 	GetTable();
-	std::cout << CYAN "Please Enter the index of The Contact you want to Search" RESET << std::endl;
+	std::cout << CYAN "Please Enter the index of The contact you want to Search" RESET << std::endl;
 	std::getline(std::cin, line);
 	std::istringstream(line) >> index;
 	index--;
@@ -55,10 +55,10 @@ void PhoneBook::search(void)
 		std::cout << RED BOLD "Please Enter the index from[1 - 8]" RESET << std::endl;
 	else
 	{
-		temp = this->Contact[index].GetFirstName();
+		temp = this->contact[index].GetFirstName();
 		if (temp.empty())
 		{
-			std::cout << RED BOLD<< "There is no Contact to SHOW\n" << RESET;
+			std::cout << RED BOLD<< "There is no contact to SHOW\n" << RESET;
 			return ;
 		}
 		GetFirstName(index);

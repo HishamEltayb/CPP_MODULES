@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/05 11:52:41 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/24 10:06:40 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ int main(void)
 	std::cout << WHITE BOLD;
 	std::cout << "5. THIS IS THE FIRST POINT AFTER EXITING THE newZombie FUNCTION, AND THE HEAP ZOMBIE HAS NOT BEEN DESTROYED YET.\n";
 	std::cout << RESET;
-
+	
+	//you can access the heap memory outside the newZombie scope function
+	heap.announce();
+	
 	delete (heap);
 	std::cout << WHITE BOLD;
 	std::cout << "6. THE HEAP ALLOCATION WILL BE DESTROYED AT THE END OF MAIN AFTER YOU FREE THE MEMORY.\n";

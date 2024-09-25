@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 18:38:38 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/24 17:04:43 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/25 15:56:46 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ bool	PhoneBook::SetFirstName(void)
 	if (temp.empty())
 	{
 		std::cout << RED BOLD "The FirstName should not be empty\n" RESET;
-		std::cout << RED BOLD "This Contact Has Not Been Saved\n" RESET;
+		std::cout << RED BOLD "This contact Has Not Been Saved\n" RESET;
 		Reset();
 		return (false);
 	}
-	this->Contact[this->index].SetFirstName(temp);
+	this->contact[this->index].SetFirstName(temp);
 	return (true);
 }
 
@@ -44,11 +44,11 @@ bool	PhoneBook::SetLastName(void)
 	if (temp.empty())
 	{
 		std::cout << RED BOLD "The LastName should not be empty\n" RESET;
-		std::cout << RED BOLD "This Contact Has Not Been Saved\n" RESET;
+		std::cout << RED BOLD "This contact Has Not Been Saved\n" RESET;
 		Reset();
 		return (false);
 	}
-	this->Contact[this->index].SetLastName(temp);
+	this->contact[this->index].SetLastName(temp);
 	return (true);
 }
 
@@ -63,11 +63,11 @@ bool	PhoneBook::SetNickName(void)
 	if (temp.empty())
 	{
 		std::cout << RED BOLD "The NickName should not be empty\n" RESET;
-		std::cout << RED BOLD "This Contact Has Not Been Saved\n" RESET;
+		std::cout << RED BOLD "This contact Has Not Been Saved\n" RESET;
 		Reset();
 		return (false);
 	}
-	this->Contact[this->index].SetNickName(temp);
+	this->contact[this->index].SetNickName(temp);
 	return (true);
 }
 
@@ -82,11 +82,11 @@ bool	PhoneBook::SetDarkestSecret(void)
 	if (temp.empty())
 	{
 		std::cout << RED BOLD "The DarkestSecret should not be empty\n" RESET;
-		std::cout << RED BOLD "This Contact Has Not Been Saved\n" RESET;
+		std::cout << RED BOLD "This contact Has Not Been Saved\n" RESET;
 		Reset();
 		return (false);
 	}
-	this->Contact[this->index].SetDarkestSecret(temp);
+	this->contact[this->index].SetDarkestSecret(temp);
 	return (true);
 }
 
@@ -101,7 +101,7 @@ bool	PhoneBook::SetPhoneNumber(void)
 	if (temp.empty())
 	{
 		std::cout << RED BOLD "The PhoneNumber should not be empty\n" RESET;
-		std::cout << RED BOLD "This Contact Has Not Been Saved\n" RESET;
+		std::cout << RED BOLD "This contact Has Not Been Saved\n" RESET;
 		Reset();
 		return (false);
 	}
@@ -112,22 +112,22 @@ bool	PhoneBook::SetPhoneNumber(void)
 			if (!std::isdigit(temp[i]))
 			{
 				std::cout << RED BOLD "The PhoneNumber should contain only digits\n" RESET;
-				std::cout << RED BOLD "This Contact Has Not Been Saved\n" RESET;
+				std::cout << RED BOLD "This contact Has Not Been Saved\n" RESET;
 				Reset();
 				return (false);
 
 			}
 		}
-		this->Contact[this->index].SetPhoneNumber(temp);
+		this->contact[this->index].SetPhoneNumber(temp);
 	}
 	else
 	{
 		std::cout << RED BOLD "The PhoneNumber should be 10 digits\n" RESET;
-		std::cout << RED BOLD "This Contact Has Not Been Saved\n" RESET;
+		std::cout << RED BOLD "This contact Has Not Been Saved\n" RESET;
 		Reset();
 		return (false);
 	}
-	std::cout << GREEN UNDERLINE BOLD "Contact Has Been Added Successfully" RESET << std::endl;
+	std::cout << GREEN UNDERLINE BOLD "contact Has Been Added Successfully" RESET << std::endl;
 	index++;
 	return (true);
 }

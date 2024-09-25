@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 18:38:38 by heltayb           #+#    #+#             */
-/*   Updated: 2024/08/24 17:04:52 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/25 15:56:46 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	PhoneBook::PrintInstructions(void)
 	std::cout << "\n                     PhoneBook\n" << std::endl;
 	std::cout << "-----------------------------------------------------" << std::endl;
 	std::cout << "Please Enter one of the following commands:" << std::endl;
-	std::cout << "1. ADD (To Add Contact to The PhoneBook)" << std::endl;
-	std::cout << "2. SEARCH (To Search Contacts By Index)" << std::endl;
+	std::cout << "1. ADD (To Add contact to The PhoneBook)" << std::endl;
+	std::cout << "2. SEARCH (To Search contacts By Index)" << std::endl;
 	std::cout << "3. EXIT (To Exit The PhoneBook)" << std::endl;
 	std::cout << "-----------------------------------------------------" << std::endl;	
 	std::cout << RESET;
@@ -43,5 +43,5 @@ void	PhoneBook::PrintInstructions(void)
 
 void	PhoneBook::Reset(void)
 {
-	Contact[this->index].Reset();
+	contact[this->index].Reset();
 }

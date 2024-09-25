@@ -6,18 +6,22 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/25 15:56:46 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/24 10:10:02 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = PhoneBook
+NAME = Bureaucrat
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra
 CXX = c++
 
-#delete me
-ADDITIONAL_FLAGS = -Wunused  -fsanitize=address -g3
+#comment me
+ADDITIONAL_FLAGS = -Wunused -g3 -std=c++98
 CXXFLAGS += $(ADDITIONAL_FLAGS)
+#comment me
+SANITAIZE_FLAG = -fsanitize=address
+CXXFLAGS += $(SANITAIZE_FLAG)
+
 
 SRCDIR	=	srcs
 OBJDIR	=	objs
@@ -32,19 +36,22 @@ all: $(NAME)
 run: $(NAME)
 	@./$(NAME) 
 
-$(NAME): $(OBJS) ./includes/contact.hpp ./includes/PhoneBook.hpp
+$(NAME): $(OBJS)
 	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	@mkdir -p $(dir $@)
 	@$(CXX) $(INCLUDE) $(CXXFLAGS)  -c $< -o $@
-	
+
 clean: 
 	@rm -rf $(OBJDIR)
 
 fclean:
 	@make clean
 	@rm -rf $(NAME)
+
+valgrind: $(NAME) 
+	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
 
 re:
 	@make fclean

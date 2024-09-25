@@ -6,19 +6,32 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/14 21:24:07 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/25 14:05:15 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Bureaucrat.hpp"
 
-int main(void)
-{
-	ClapTrap a("enemy");
+int main() {
+    try {
+        Bureaucrat b(2, "John");
+        std::cout << b << std::endl;
 
-	a.attack("enemy1");
-	a.beRepaired(10);
-	a.takeDamage(30);
+        b.incrementGrade(); 
+        std::cout << b << std::endl;
 
-	return (0);
+        b.incrementGrade();
+    }
+    catch (const std::string e) {
+        std::cerr << "Error: " << e << std::endl;
+    }
+
+    try {
+        Bureaucrat b(151, "Mike");
+    }
+    catch (const std::string e) {
+        std::cerr << "Error: " << e << std::endl;
+    }
+
+    return 0;
 }
