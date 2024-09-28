@@ -6,7 +6,7 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/24 10:18:02 by heltayb          ###   ########.fr        #
+#    Updated: 2024/09/27 16:28:31 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CXXFLAGS = -Wall -Werror -Wextra
 CXX = c++
 
 #comment me
-ADDITIONAL_FLAGS = -Wunused -g3 -std=c++98
-CXXFLAGS += $(ADDITIONAL_FLAGS)
+# ADDITIONAL_FLAGS = -Wunused -g3 -std=c++98
+# CXXFLAGS += $(ADDITIONAL_FLAGS)
 #comment me
-SANITAIZE_FLAG = -fsanitize=address
-CXXFLAGS += $(SANITAIZE_FLAG)
+# SANITAIZE_FLAG = -fsanitize=address
+# CXXFLAGS += $(SANITAIZE_FLAG)
 
 
 SRCDIR	=	srcs
@@ -28,6 +28,8 @@ OBJDIR	=	objs
  
 SRCS	:=	$(shell find $(SRCDIR) -type f)
 OBJS	:=	$(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
+
+FILE_TO_DELETE  = $(shell find . -type f | grep "_shrubbery")
 
 INCLUDE = -I ./includes/
 
@@ -45,6 +47,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 
 clean: 
 	@rm -rf $(OBJDIR)
+	@rm -rf $(FILE_TO_DELETE)
 
 fclean:
 	@make clean

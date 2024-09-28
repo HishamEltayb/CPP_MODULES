@@ -6,22 +6,19 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/26 10:08:51 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/27 09:54:11 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main() 
 {
-	std::cout << YELLOW BOLD "\nIncrement test\n" RESET;
-
 	//increment testing
     try 
 	{
         Bureaucrat increment(2, "John");
-		
-		//overloaded insertion test
         std::cout << increment << std::endl;
 
         increment.incrementGrade(); 
@@ -38,7 +35,6 @@ int main()
 		std::cerr << RED BOLD "Error: ANY TYPE" << std::endl;
 	}
 	
-	std::cout << YELLOW BOLD "\nDecrement test\n" RESET;
 	//decrement testing
     try 
 	{
@@ -55,7 +51,6 @@ int main()
         std::cerr << RED BOLD "Error: " << err.what() << std::endl;
     }
 	
-	std::cout << YELLOW BOLD "\nHigh grade initializing test\n" RESET;
 	//high grade initializing test
     try 
 	{
@@ -72,9 +67,8 @@ int main()
         std::cerr << RED BOLD "Error: " << err.what() << std::endl;
     }
 	
-	std::cout << YELLOW BOLD "\nLow grade initializing test\n" RESET;
 	//low grade initializing test
-    try 
+    try
 	{
         Bureaucrat decrement(151, "John");
         std::cout << decrement << std::endl;
@@ -88,6 +82,27 @@ int main()
 	{
         std::cerr << RED BOLD "Error: " << err.what() << std::endl;
     }
+
+	try 
+	{
+		Form formNeedToBeSigned("TAX", 5, 2);
+		Bureaucrat canSignForm(150, "president");
+
+		std::cout << formNeedToBeSigned;
+
+		canSignForm.signForm(formNeedToBeSigned);
+		std::cout << "\n\n";
+		
+		std::cout << formNeedToBeSigned;
+
+		std::cout << "\n\n";
+		formNeedToBeSigned.beSigned(canSignForm);
+		std::cout << formNeedToBeSigned;
+	}
+	catch(std::exception &err)
+	{
+		std::cout << RED BOLD "ERROR: " << err.what() << "\n";
+	}
 
 
     return 0;
