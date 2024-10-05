@@ -107,7 +107,6 @@ void	ScalarConverter::printFloat(NumberType &valueType)
 		else
 		{
 			float numberFloat = valueType;
-			if (numberFloat)
 			int dotPosition = valueType.getDotPosition();
 			if (dotPosition > 5)
 				dotPosition = 5;

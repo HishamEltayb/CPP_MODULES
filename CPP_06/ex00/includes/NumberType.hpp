@@ -19,6 +19,9 @@
 #include <iomanip>
 #include <cstdlib>
 #include <climits>
+#include <limits>
+#include <iostream>
+#include <ostream>
 
 #define CHAR 			1
 #define INT 			2

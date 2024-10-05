@@ -19,8 +19,8 @@ CXX = c++
 ADDITIONAL_FLAGS = -Wunused -g3 -std=c++98
 CXXFLAGS += $(ADDITIONAL_FLAGS)
 #comment me
-SANITAIZE_FLAG = -fsanitize=address -Wconversion
-CXXFLAGS += $(SANITAIZE_FLAG)
+# SANITAIZE_FLAG = -fsanitize=address -Wconversion
+# CXXFLAGS += $(SANITAIZE_FLAG)
 
 SRCDIR	=	srcs
 OBJDIR	=	objs
