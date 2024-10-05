@@ -6,11 +6,11 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/28 09:15:35 by heltayb          ###   ########.fr        #
+#    Updated: 2024/10/01 12:13:12 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Scalar
+NAME = ScalarConverter
 
 CXXFLAGS = -Wall -Werror -Wextra
 CXX = c++
@@ -19,7 +19,7 @@ CXX = c++
 ADDITIONAL_FLAGS = -Wunused -g3 -std=c++98
 CXXFLAGS += $(ADDITIONAL_FLAGS)
 #comment me
-SANITAIZE_FLAG = -fsanitize=address
+SANITAIZE_FLAG = -fsanitize=address -Wconversion
 CXXFLAGS += $(SANITAIZE_FLAG)
 
 SRCDIR	=	srcs
@@ -33,7 +33,7 @@ INCLUDE = -I ./includes/
 all: $(NAME)
 
 run: $(NAME)
-	@./$(NAME) 
+	@./$(NAME) 42.00f
 
 $(NAME): $(OBJS)
 	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)

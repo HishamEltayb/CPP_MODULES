@@ -10,74 +10,166 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "ScalarConverter.hpp"
+#include "NumberType.hpp"
 
-Bureaucrat::~Bureaucrat(void) {std::cout << RED STRIKETHROUGH << "[Bureaucrat Default Destructor called]\n" << RESET;}
+ScalarConverter ScalarConverter::instance;
 
-Bureaucrat::Bureaucrat(void): name("Bureaucrat")
+ScalarConverter::~ScalarConverter(void){}
+ScalarConverter::ScalarConverter(void) {}
+ScalarConverter::ScalarConverter(const ScalarConverter& existObject) {(void)existObject;}
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& existObject) {(void)existObject;return (*this);}
+
+void	ScalarConverter::printTypeMessage(int type)
 {
-	std::cout << GREEN STRIKETHROUGH <<"[Bureaucrat Default constructor called]\n" <<  RESET;
-	this->grade = 150;
+	std::cout << YELLOW "The Input from type ";
+	switch(type)
+	{
+		case CHAR:
+			std::cout << "Char";
+			break;
+		case INT:
+			std::cout << "INT";
+			break;
+		case FLOAT:
+			std::cout << "FLOAT";
+			break;
+		case DOUBLE:
+			std::cout << "DOUBLE";
+			break;
+		case FLOAT_LITERAL:
+			std::cout << "FLOAT_LITERAL";
+			break;
+		case DOUBLE_LITERAL:
+			std::cout << "DOUBLE_LITERAL";
+			break;
+		case UNDIFINED:
+			std::cout << "UNDIFINED";
+			throw ScalarConverter::InvalidException();
+			break;
+		default:
+			throw ScalarConverter::InvalidException();
+	}
+	std::cout << RESET "\n" CYAN "Char: " RESET ;	
 }
 
-Bureaucrat::Bureaucrat(int grade, std::string name) : name(name)
+void	ScalarConverter::printChar(NumberType &valueType)
 {
-	if (grade < 1)
-		throw Bureaucrat::gradeTooHighException();
-	if (grade > 150)
-		throw Bureaucrat::gradeTooLowException();
-	std::cout << GREEN STRIKETHROUGH <<"[Bureaucrat overloaded constructor called]\n" <<  RESET;
-	this->grade = grade;
+
+	if (valueType.getNumber() > std::numeric_limits<char>::max() || valueType.getNumber() < std::numeric_limits<char>::min())
+		std::cout << "Impossible";
+	else
+	{
+	char numberChar = valueType;
+		switch (numberChar)
+		{
+			case IMPOSSIBLE:
+				std::cout << "Impossible";
+				break;
+			case NOT_DISPLAYABLE:
+				std::cout << "Not Displayable";
+				break;
+			default:
+				std::cout << "'" << numberChar << "'";
+		}
+	}
+	std::cout << "\n";	
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &existObject)
+void	ScalarConverter::printInt(NumberType &valueType)
 {
-	std::cout << YELLOW STRIKETHROUGH << "[Bureaucrat Copy constructor called]\n" << RESET;
-	*this = existObject;
+
+	if (valueType.getNumber() > std::numeric_limits<int>::max() || valueType.getNumber() < std::numeric_limits<int>::min())
+		std::cout << BLUE "Int: " RESET << "Impossible" << "\n";
+	else
+	{
+			int numberInt = valueType;
+		if (valueType.getType() == FLOAT_LITERAL || valueType.getType() == DOUBLE_LITERAL)
+			std::cout << BLUE "Int: " RESET << "Impossible" << "\n";
+		else
+		{
+			std::cout << BLUE "Int: " RESET << numberInt << "\n";
+		}
+	}
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat &existObject)
+void	ScalarConverter::printFloat(NumberType &valueType)
 {
-	std::cout << MAGENTA STRIKETHROUGH "[Bureaucrat Copy assignment operator called]\n" << RESET;
-	if (this != &existObject)
-		this->grade = existObject.grade;
-	return (*this);
+
+	// if (valueType.getNumber() > std::numeric_limits<float>::max() || valueType.getNumber() < std::numeric_limits<float>::min())
+	// 	std::cout << BLUE "Float: " RESET << "Impossible" << "\n";
+	// else
+	// {
+		if (valueType.getType() == FLOAT_LITERAL)
+			std::cout << BLUE "Float: " RESET << valueType.getString() << "\n";
+		else if (valueType.getType() == DOUBLE_LITERAL)
+			std::cout << BLUE "Float: " RESET << valueType.getString() << "f" << "\n";
+		else
+		{
+			float numberFloat = valueType;
+			if (numberFloat)
+			int dotPosition = valueType.getDotPosition();
+			if (dotPosition > 5)
+				dotPosition = 5;
+			std::cout << MAGENTA "Float: " RESET << std::fixed << std::setprecision(dotPosition) << numberFloat << "f" << "\n";
+		}
+	// }
 }
 
-const std::string&	Bureaucrat::getName(void) const {return (this->name);}
-
-int					Bureaucrat::getGrade(void) const {return (this->grade);}
-
-void			Bureaucrat::incrementGrade(void)
+void	ScalarConverter::printDouble(NumberType &valueType)
 {
-	if ((this->grade - 1) < 1)
-		throw Bureaucrat::gradeTooHighException();
-	this->grade--;
+
+	if (valueType.getType() == FLOAT_LITERAL)
+	{
+		std::string temp = valueType.getString();
+		temp.erase(temp.size() - 1);	
+		std::cout << BLUE "Double: " RESET << temp << "\n";
+	}
+	else if (valueType.getType() == DOUBLE_LITERAL)
+		std::cout << BLUE "Double: " RESET << valueType.getString() << "\n";
+	else
+	{
+		double numberDouble = valueType;
+		int dotPosition = valueType.getDotPosition();
+		if (dotPosition > 14)
+			dotPosition = 14;
+		std::cout << MAGENTA "Double: " RESET << std::fixed <<  std::setprecision(dotPosition) << numberDouble << "\n";
+	}
 }
 
-void			Bureaucrat::decrementGrade(void)
+void	ScalarConverter::printing(NumberType &valueType)
 {
-	if ((this->grade + 1) > 150)
-		throw Bureaucrat::gradeTooLowException();
-	this->grade++;
+	printTypeMessage(valueType.getType());
+	printChar(valueType);
+	printInt(valueType);
+	printFloat(valueType);
+	printDouble(valueType);
 }
 
-std::ostream& operator<<(std::ostream &out, const Bureaucrat &Bureaucrat)
+void ScalarConverter::convert(char *arg)
 {
-    out << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade() << ".";
-    return (out);
+	if (!arg)
+		throw ScalarConverter::InvalidException();
+	std::string string = arg;
+	NumberType valueType(string);
+	instance.printing(valueType);
 }
 
-
-const char * Bureaucrat::gradeTooHighException::what(void) const throw()
+const char* ScalarConverter::EmptyException::what() const throw()
 {
-	const char * exceptionMsg = RED BOLD "Grade is Too High...!!" RESET;
+	const char * exceptionMsg = RED BOLD "ERROR: EMPTY STRING" RESET;
 	return (exceptionMsg);
 }
 
-const char * Bureaucrat::gradeTooLowException::what(void) const throw()
+
+const char* ScalarConverter::InvalidException::what() const throw()
 {
-	const char * exceptionMsg = RED BOLD "Grade is Too Low...!!" RESET;
+	const char * exceptionMsg = RED BOLD "ERROR: INVALID VALUE" RESET;
 	return (exceptionMsg);
 }
 
+const char* ScalarConverter::RangeException::what() const throw()
+{
+	const char * exceptionMsg = RED BOLD "ERROR: INVALID Range Value" RESET;
+	return (exceptionMsg);
+}

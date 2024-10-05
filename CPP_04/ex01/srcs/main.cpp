@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/22 14:52:52 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/09/28 13:12:42 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int main(void)
 		Animal[i] = new Dog();
 	
 	//creating the second half as Cats
-	for (; i < numberOfObjects; i++)
-		Animal[i] = new Cat();
+	// for (; i < numberOfObjects; i++)
+	// 	Animal[i] = new Cat();
 	
 	i = 0;
 
@@ -46,16 +46,16 @@ int main(void)
 		pointerToDogClass->printBrainIdeas();
 	}
 	
-	//just making sure of the type and the sound and the ideas of the Cat brain
-	for (; i < numberOfObjects; i++)
-	{
-		const Cat *pointerToCatClass = dynamic_cast<const Cat *>(Animal[i]);
-		std::cout << Animal[i]->getType() << " (" << i + 1<< ")" << std::endl;
-		Animal[i]->makeSound();
-		pointerToCatClass->printBrainIdeas();
-		pointerToCatClass->setBrainIdeas("CAT: I want to run from the dog");
-		pointerToCatClass->printBrainIdeas();
-	}
+	// //just making sure of the type and the sound and the ideas of the Cat brain
+	// for (; i < numberOfObjects; i++)
+	// {
+	// 	const Cat *pointerToCatClass = dynamic_cast<const Cat *>(Animal[i]);
+	// 	std::cout << Animal[i]->getType() << " (" << i + 1<< ")" << std::endl;
+	// 	Animal[i]->makeSound();
+	// 	pointerToCatClass->printBrainIdeas();
+	// 	pointerToCatClass->setBrainIdeas("CAT: I want to run from the dog");
+	// 	pointerToCatClass->printBrainIdeas();
+	// }
 
 	i = 0;
 	
@@ -65,9 +65,9 @@ int main(void)
 		delete Animal[i];
 
 	
-	//deleting the Cats memory 
-	for (; i < numberOfObjects; i++)
-		delete Animal[i];
+	// //deleting the Cats memory 
+	// for (; i < numberOfObjects; i++)
+	// 	delete Animal[i];
 		
 
 
