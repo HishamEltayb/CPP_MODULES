@@ -46,3 +46,7 @@ sudo dscl . -create /Users/aliali;sudo dscl . -create /Users/aliali UserShell /b
 
 
 https://chatgpt.com/share/6702b433-caf4-8006-a208-4d28f4edd81b
+
+
+
+https://chatgpt.com/share/6702b433-caf4-8006-a208-4d28f4edd81b
