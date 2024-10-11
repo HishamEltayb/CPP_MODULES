@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ImplicitConverter.hpp                              :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 10:21:38 by heltayb           #+#    #+#             */
-/*   Updated: 2024/10/01 16:53:36 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/10/10 19:10:41 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMPLICITCONVERTER_HPP
-# define IMPLICITCONVERTER_HPP
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-#include "Colors.hpp"
-#include <iostream>
-#include <string>
-#include <iomanip>
-#include <cstdlib>
+#include "Data.hpp"
 
-class ImplicitConverter
+class Data;
+
+class Serializer
 {
 	private:
-		long double number;
+		~Serializer(void);
+		Serializer(void);
+		Serializer(const Serializer& existObject);
+		Serializer& operator=(const Serializer& existObject);
 		
 	public:
-		~ImplicitConverter(void);
-		ImplicitConverter(void);
-		ImplicitConverter(const ImplicitConverter& existObject);
-		ImplicitConverter& operator=(const ImplicitConverter& existObject);
-		
-		ImplicitConverter(long double number);
-		operator char();
-		operator int();
-		operator float();
-		operator double();
+		static uintptr_t	serialize(Data* ptr);
+		static Data*		deserialize(uintptr_t raw);
+
 };
+
 
 #endif

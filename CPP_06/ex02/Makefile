@@ -6,7 +6,7 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/09/28 09:16:16 by heltayb          ###   ########.fr        #
+#    Updated: 2024/10/10 18:51:59 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ CXX = c++
 ADDITIONAL_FLAGS = -Wunused -g3 -std=c++98
 CXXFLAGS += $(ADDITIONAL_FLAGS)
 #comment me
-SANITAIZE_FLAG = -fsanitize=address
-CXXFLAGS += $(SANITAIZE_FLAG)
+# SANITAIZE_FLAG = -fsanitize=address
+# CXXFLAGS += $(SANITAIZE_FLAG)
 
 
 SRCDIR	=	srcs

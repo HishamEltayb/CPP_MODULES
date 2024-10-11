@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:33:32 by heltayb           #+#    #+#             */
-/*   Updated: 2024/10/04 19:25:31 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/10/11 11:54:20 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ NumberType::NumberType(std::string &string)
 	
 	this->numberLongDouble = std::strtold(str, &end);
 
-	
-	if (string == "-inff" || string == "+inff" || string == "inff" || string == "nanf")
+	if (string == "-inff" || string == "+inff" || string == "inff" || string == "nanf" || string == "+nanf" || string == "-nanf")
 		this->type = FLOAT_LITERAL;
-	else if (string == "-inf" || string == "+inf" || string == "inf" || string == "nan")
+	else if (string == "-inf" || string == "+inf" || string == "inf" || string == "nan" || string == "+nan" || string == "-nan")
 		this->type = DOUBLE_LITERAL;
 	else if (string.length() == 1 && std::isprint(string[0]))
 	{
@@ -44,34 +43,40 @@ NumberType::NumberType(std::string &string)
 		else
 		{
 			this->numberLongDouble = static_cast<int>(string[0]);
-			if (this->numberLongDouble > std::numeric_limits<char>::max() || this->numberLongDouble < std::numeric_limits<char>::min())
+			if (this->numberLongDouble > std::numeric_limits<char>::max() || this->numberLongDouble < -std::numeric_limits<char>::max())
 				throw ScalarConverter::RangeException();
 			this->type = CHAR;
 		}
 	}
 	else if (end && static_cast<std::string>(end).size() == 1 && *end == 'f' && static_cast<std::string>(str).find('.') != std::string::npos)
 	{
-		if (this->numberLongDouble > std::numeric_limits<float>::max() || this->numberLongDouble < std::numeric_limits<float>::min())
+		if (this->numberLongDouble > std::numeric_limits<float>::max() || this->numberLongDouble < -std::numeric_limits<float>::max())
 			throw ScalarConverter::RangeException();
 		size_t temp = static_cast<std::string>(str).find('.');
 		size_t temp1 = static_cast<std::string>(str).length();
 		size_t temp2 = static_cast<std::string>(end).length();
-		this->dotPosition = temp1 - temp - temp2 - 1;
+		if (temp == temp1 - 2)
+			this->dotPosition = temp1 - temp - temp2;
+		else
+			this->dotPosition = temp1 - temp - temp2 - 1;
 		this->type = FLOAT;
 	}
 	else if (end && !*end && static_cast<std::string>(str).find('.') != std::string::npos)
 	{
-		if (this->numberLongDouble > std::numeric_limits<double>::max() || this->numberLongDouble < std::numeric_limits<double>::min())
+		if (this->numberLongDouble > std::numeric_limits<double>::max() || this->numberLongDouble < -std::numeric_limits<double>::max())
 			throw ScalarConverter::RangeException();
 		size_t temp = static_cast<std::string>(str).find('.');
 		size_t temp1 = static_cast<std::string>(str).length();
 		size_t temp2 = static_cast<std::string>(end).length();
-		this->dotPosition = temp1 - temp - temp2 - 1;
+		if (temp == temp1 - 1)
+			this->dotPosition = temp1 - temp - temp2;
+		else
+			this->dotPosition = temp1 - temp - temp2 - 1;
 		this->type = DOUBLE;
 	}
 	else if (end && !*end)
 	{
-		if (this->numberLongDouble > std::numeric_limits<int>::max() || this->numberLongDouble < std::numeric_limits<int>::min())
+		if (this->numberLongDouble > std::numeric_limits<int>::max() || this->numberLongDouble < -std::numeric_limits<int>::max())
 			throw ScalarConverter::RangeException();
 		this->type = INT;
 	}
@@ -104,10 +109,10 @@ NumberType::operator char()
 {
 	if (this->type == FLOAT_LITERAL || this->type == DOUBLE_LITERAL)
 		return IMPOSSIBLE;
-	if (this->numberLongDouble < 1 || this->numberLongDouble > 127)
-		return IMPOSSIBLE;
-	else if (std::isprint(static_cast<int>(this->numberLongDouble)) == 0)
+	if (std::isprint(static_cast<int>(this->numberLongDouble)) == 0)
 		return NOT_DISPLAYABLE;
+	else if (this->numberLongDouble < 1 || this->numberLongDouble > 127)
+		return IMPOSSIBLE;
 	return (static_cast<char>(this->numberLongDouble));
 }
 

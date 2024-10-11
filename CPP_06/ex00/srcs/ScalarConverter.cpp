@@ -96,10 +96,10 @@ void	ScalarConverter::printInt(NumberType &valueType)
 void	ScalarConverter::printFloat(NumberType &valueType)
 {
 
-	// if (valueType.getNumber() > std::numeric_limits<float>::max() || valueType.getNumber() < std::numeric_limits<float>::min())
-	// 	std::cout << BLUE "Float: " RESET << "Impossible" << "\n";
-	// else
-	// {
+	if (valueType.getNumber() > std::numeric_limits<float>::max() || valueType.getNumber() < -std::numeric_limits<float>::max())
+		std::cout << BLUE "Float: " RESET << "Impossible" << "\n";
+	else
+	{
 		if (valueType.getType() == FLOAT_LITERAL)
 			std::cout << BLUE "Float: " RESET << valueType.getString() << "\n";
 		else if (valueType.getType() == DOUBLE_LITERAL)
@@ -112,27 +112,32 @@ void	ScalarConverter::printFloat(NumberType &valueType)
 				dotPosition = 5;
 			std::cout << MAGENTA "Float: " RESET << std::fixed << std::setprecision(dotPosition) << numberFloat << "f" << "\n";
 		}
-	// }
+	}
 }
 
 void	ScalarConverter::printDouble(NumberType &valueType)
 {
 
-	if (valueType.getType() == FLOAT_LITERAL)
-	{
-		std::string temp = valueType.getString();
-		temp.erase(temp.size() - 1);	
-		std::cout << BLUE "Double: " RESET << temp << "\n";
-	}
-	else if (valueType.getType() == DOUBLE_LITERAL)
-		std::cout << BLUE "Double: " RESET << valueType.getString() << "\n";
+	if (valueType.getNumber() > std::numeric_limits<float>::max() || valueType.getNumber() < -std::numeric_limits<float>::max())
+		std::cout << BLUE "Float: " RESET << "Impossible" << "\n";
 	else
 	{
-		double numberDouble = valueType;
-		int dotPosition = valueType.getDotPosition();
-		if (dotPosition > 14)
-			dotPosition = 14;
-		std::cout << MAGENTA "Double: " RESET << std::fixed <<  std::setprecision(dotPosition) << numberDouble << "\n";
+		if (valueType.getType() == FLOAT_LITERAL)
+		{
+			std::string temp = valueType.getString();
+			temp.erase(temp.size() - 1);	
+			std::cout << BLUE "Double: " RESET << temp << "\n";
+		}
+		else if (valueType.getType() == DOUBLE_LITERAL)
+			std::cout << BLUE "Double: " RESET << valueType.getString() << "\n";
+		else
+		{
+			double numberDouble = valueType;
+			int dotPosition = valueType.getDotPosition();
+			if (dotPosition > 14)
+				dotPosition = 14;
+			std::cout << MAGENTA "Double: " RESET << std::fixed <<  std::setprecision(dotPosition) << numberDouble << "\n";
+		}
 	}
 }
 

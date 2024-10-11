@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Printing.hpp                                       :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 10:21:38 by heltayb           #+#    #+#             */
-/*   Updated: 2024/10/01 16:58:06 by heltayb          ###   ########.fr       */
+/*   Created: 2024/10/10 16:44:01 by heltayb           #+#    #+#             */
+/*   Updated: 2024/10/10 18:42:27 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTING_HPP
-# define PRINTING_HPP
+#ifndef A_HPP
+# define A_HPP
 
-#include "Colors.hpp"
-#include <iostream>
-#include <string>
-#include <iomanip>
-#include <cstdlib>
+#include "Base.hpp"
 
-class ImplicitConverter;
+class Base;
 
-class Printint
+class A : public Base
 {
 	public:
-		~Printint(void);
-		Printint(void);
-		Printint(const Printint& existObject);
-		Printint& operator=(const Printint& existObject);
-		
-		Printint(ImplicitConverter number);
-		operator char();
-		operator int();
-		operator float();
-		operator double();
+		~A();
 };
 
 #endif

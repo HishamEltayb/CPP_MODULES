@@ -5,34 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/10/09 13:54:05 by heltayb          ###   ########.fr       */
+/*   Created: 2024/10/10 16:58:23 by heltayb           #+#    #+#             */
+/*   Updated: 2024/10/10 18:45:22 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "HelperFunctions.hpp"
 
-int main(int argc, char** argv)
+
+int main()
 {
-	try 
+	Base *ptr = NULL;
+	Base *ptr2 = NULL;
+    try 
 	{
-		std::string msg = RED BOLD "Wrong Number of Parameters\n" RESET;
-		msg += RED BOLD "Usage: ./ScalarConverter <argument>\n" RESET;
-		if (argc != 2)
-			throw msg;
-    	ScalarConverter::convert(argv[1]);
-	}
-	catch (std::exception &error)
+    	ptr = HelperFunctions::generate();
+    } 
+	catch (const std::exception &e) 
 	{
-		std::cout << error.what() << "\n";
-	}
-	catch (std::string &error)
+        std::cout << "Caught exception: " << e.what() << std::endl;
+		return (1);
+    }
+    try 
 	{
-		std::cout << error;
-	}
-	catch (...)
+    	ptr2 = HelperFunctions::generate();
+    } 
+	catch (const std::exception &e) 
 	{
-		std::cout << RED "ERROR: EXCEPTION HAS BEEN DETECTED" RESET << "\n";
+        std::cout << "Caught exception: " << e.what() << std::endl;
+		delete ptr;
+		return (1);
+    }
+	if (ptr2)
+	{
+		Base &ref = *ptr2;
+		HelperFunctions::identify(ptr);
+		HelperFunctions::identify(ref);
 	}
+
+	delete ptr;
+	delete ptr2;
     return (0);
 }
