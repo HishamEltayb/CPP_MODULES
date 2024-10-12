@@ -6,7 +6,7 @@
 #    By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/11 11:08:13 by heltayb           #+#    #+#              #
-#    Updated: 2024/10/10 18:51:59 by heltayb          ###   ########.fr        #
+#    Updated: 2024/10/12 11:51:54 by heltayb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,6 @@ OBJDIR	=	objs
 SRCS	:=	$(shell find $(SRCDIR) -type f)
 OBJS	:=	$(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
 
-FILE_TO_DELETE  = $(shell find . -type f | grep "_shrubbery")
 
 INCLUDE = -I ./includes/
 
@@ -47,7 +46,6 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 
 clean: 
 	@rm -rf $(OBJDIR)
-	@rm -rf $(FILE_TO_DELETE)
 
 fclean:
 	@make clean
