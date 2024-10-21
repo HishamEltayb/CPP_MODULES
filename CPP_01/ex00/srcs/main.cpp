@@ -6,7 +6,7 @@
 /*   By: heltayb <heltayb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:14:41 by heltayb           #+#    #+#             */
-/*   Updated: 2024/09/24 10:06:40 by heltayb          ###   ########.fr       */
+/*   Updated: 2024/10/21 14:08:03 by heltayb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(void)
 	std::cout << RESET;
 	
 	//you can access the heap memory outside the newZombie scope function
-	heap.announce();
+	heap->announce();
 	
 	delete (heap);
 	std::cout << WHITE BOLD;
